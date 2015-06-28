@@ -1,0 +1,6 @@
+# Django stuff:
+*.log
+
+*.sqlite3
+scblog/settings.py
+scblog/settings.pyc
