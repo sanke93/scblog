@@ -104,8 +104,11 @@ PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
 PROJECT_PATH = os.path.abspath(PROJECT_PATH) #goes back up
 
 #ROOT_PATH = os.path.dirname(__file__)
-STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
+#STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
+STATIC_ROOT = '/home/sanket/public_html/sanketchauhan.com/sanket-website/scblog/static/'
 STATIC_URL = '/static/'
+MEDIA_ROOT = '/home/sanket/public_html/sanketchauhan.com/sanket-website/scblog/static/'
+MEDIA_URL = '/static/'
 STATIC_PATH = os.path.join(PROJECT_PATH, 'static')
 
 # STATICFILES_DIRS = (
