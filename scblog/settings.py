@@ -74,10 +74,21 @@ WSGI_APPLICATION = 'scblog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE' : 'django.db.backends.postgresql_psycopg2',
+        'NAME' : 'portfolio',
+        'USER' : environ['DB_USERNAME'],
+        'PASSWORD' : environ['DB_PASSWORD'],
+        'HOST' : '',
+        'PORT' : '',
     }
 }
 
@@ -105,10 +116,12 @@ PROJECT_PATH = os.path.abspath(PROJECT_PATH) #goes back up
 
 #ROOT_PATH = os.path.dirname(__file__)
 #STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
-STATIC_ROOT = '/home/sanket/public_html/sanketchauhan.com/sanket-website/scblog/static/'
+# STATIC_ROOT = '/home/sanket/public_html/sanketchauhan.com/sanket-website/scblog/static/'
+from .base import *
+
 STATIC_URL = '/static/'
-# MEDIA_ROOT = '/home/sanket/public_html/sanketchauhan.com/sanket-website/scblog/static/'
-# MEDIA_URL = '/static/'
+STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
+
 STATIC_PATH = os.path.join(PROJECT_PATH, 'static')
 
 # STATICFILES_DIRS = (
