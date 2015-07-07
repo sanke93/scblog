@@ -37,6 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog',
+    'django_markdown'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -114,16 +116,11 @@ SETTINGS_DIR = os.path.dirname(__file__) #gets to folder containing this file
 PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
 PROJECT_PATH = os.path.abspath(PROJECT_PATH) #goes back up
 
-#ROOT_PATH = os.path.dirname(__file__)
-#STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
-# STATIC_ROOT = '/home/sanket/public_html/sanketchauhan.com/sanket-website/scblog/static/'
-#from .base import *
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
-#STATIC_ROOT = '/home/sanket/sanket-website/scblog/static/'
-#STATIC_PATH = os.path.join(PROJECT_PATH, 'static')
 
-# STATICFILES_DIRS = (
-#     STATIC_PATH,
-# )
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, "templates"), )
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
+
+
