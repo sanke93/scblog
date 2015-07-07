@@ -121,8 +121,8 @@ PROJECT_PATH = os.path.abspath(PROJECT_PATH) #goes back up
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
-
-STATIC_PATH = os.path.join(PROJECT_PATH, 'static')
+#STATIC_ROOT = '/home/sanket/sanket-website/scblog/static/'
+#STATIC_PATH = os.path.join(PROJECT_PATH, 'static')
 
 # STATICFILES_DIRS = (
 #     STATIC_PATH,
