@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/
 
 import os
 import sys	
-sys.path.append('~/public_html/sanketchauhan.com/')
+sys.path.append('/home/sanket/public_html/sanketchauhan.com/sanket-website/scblog')
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "scblog.settings")
