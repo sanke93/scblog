@@ -84,9 +84,9 @@ WSGI_APPLICATION = 'scblog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE' : 'django.db.backends.postgresql_psycopg2',
-        'NAME' : 'portfolio',
-        'USER' : environ['DB_USERNAME'],
-        'PASSWORD' : environ['DB_PASSWORD'],
+        'NAME' : 'scblog_db',
+        'USER' : os.environ['DB_USERNAME'],
+        'PASSWORD' : os.environ['DB_PASSWORD'],
         'HOST' : '',
         'PORT' : '',
     }
@@ -117,7 +117,7 @@ PROJECT_PATH = os.path.abspath(PROJECT_PATH) #goes back up
 #ROOT_PATH = os.path.dirname(__file__)
 #STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
 # STATIC_ROOT = '/home/sanket/public_html/sanketchauhan.com/sanket-website/scblog/static/'
-from .base import *
+#from .base import *
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
