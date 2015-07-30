@@ -38,7 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'django_markdown'
+    'django_markdown',
+    'django_summernote',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -65,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.media',
             ],
         },
     },
@@ -116,11 +118,12 @@ SETTINGS_DIR = os.path.dirname(__file__) #gets to folder containing this file
 PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
 PROJECT_PATH = os.path.abspath(PROJECT_PATH) #goes back up
 
-
+MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media')
+MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, "templates"), )
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
 
 
