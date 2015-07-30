@@ -43,6 +43,7 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -134,8 +135,5 @@ OPBEAT = {
     'APP_ID': 'bc313f8620',
     'SECRET_TOKEN': '454b3d2814992b2df042a7f47cc3dc1f5e823955',
 }
-MIDDLEWARE_CLASSES = (
-    'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
-    # ADD ALL YOUR OTHER MIDDLEWARE CLASSES BELOW HERE ... 
-)
+
 
