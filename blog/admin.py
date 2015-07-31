@@ -1,7 +1,5 @@
 from django.contrib import admin
 from . import models
-from django_markdown.admin import MarkdownModelAdmin
-from django_markdown.widgets import AdminMarkdownWidget
 from django_summernote.admin import SummernoteModelAdmin
 from django.db.models import TextField
 

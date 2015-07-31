@@ -29,3 +29,5 @@ urlpatterns = patterns(
     (r'^summernote/', include('django_summernote.urls')),
     #(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT})),
 )+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+admin.site.site_header = "Sanket Chauhan's blog"

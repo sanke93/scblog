@@ -11,11 +11,13 @@
     <link rel="icon" href="{% static "icons/favicon.ico" %}">
     <link href="/feed/" rel="alternate" type="application/rss+xml" title="Q Blog Feed" />
     <title>Sanket Chauhan's blog</title>
-
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,100,300,700,900,300italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+      <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
     <!-- Bootstrap core CSS -->
-
+<!--
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-
+-->
     <!-- Custom styles for this template -->
     <link href="{% static "css/blog.css" %}" rel="stylesheet">
 
@@ -29,56 +31,67 @@
 
   <body>
 
-    <div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item active" href="{% url "index" %}">Blog</a>
-          <a class="blog-nav-item" href="#">Projects</a>
-          <a class="blog-nav-item" href="#">About</a>
-        </nav>
-      </div>
-    </div>
+  
 
-    <div class="container">
-
-      <div class="blog-header">
-        <h1 class="blog-title">Sanket Chauhan's blog</h1>
-        <p class="lead blog-description">Random thoughts.</p>
-      </div>
-
-      <div class="row">
-
-        <div class="col-sm-8 blog-main">
-          {% block blog_entries %} {% endblock %}
-
-          {% if is_paginated %}
-            <ul class="pager">
-              <li {% if not page_obj.has_previous %}class="disabled"{% endif %}><a {% if page_obj.has_previous %}href="?page={{ page_obj.previous_page_number }}"{% endif %}>Prev</a></li>
-              <li {% if not page_obj.has_next %}class="disabled"{% endif %}><a {% if page_obj.has_next %}href="?page={{ page_obj.next_page_number }}"{% endif %}>Next</a></li>
-            </ul>
-    {% endif %}
-        </div><!-- /.blog-main -->
-
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-          <div class="sidebar-module sidebar-module-inset">
-            
+<div id="layout" >
+          <div class="">
+            <div class=" sidebar header pure-g">
+              <div class="pure-u-1 pure-u-md-1-2">
+                <h1 class="brand-title">Sanket's blog</h1>
+                <h2 class="brand-tagline">Random thoughts</h2>
+              </div>
+              <div class="ure-u-1 pure-u-md-1-2">
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a class="pure-button" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pure-button" href="https://github.com/sanke93">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pure-button" href="#">About</a>
+                        </li>
+                    </ul>
+                </nav>
+              </div>
+            </div>
           </div>
-        </div><!-- /.blog-sidebar -->
 
-      </div><!-- /.row -->
+          <div class="content  pure-g ">
+            <div class="pure-u-1 pure-u-md-4-5">
+              <div class="posts" >
+                  {% block blog_entries %} {% endblock %}
+                     {% if is_paginated %}
+                        <ul class="pager">
+                          <li {% if not page_obj.has_previous %}class="disabled"{% endif %}><a {% if page_obj.has_previous %}href="?page={{ page_obj.previous_page_number }}"{% endif %}>Prev</a></li>
+                          <li {% if not page_obj.has_next %}class="disabled"{% endif %}><a {% if page_obj.has_next %}href="?page={{ page_obj.next_page_number }}"{% endif %}>Next</a></li>
+                        </ul>
+                      {% endif %}
+              </div>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-5 right-sidebar">
+              <p></p>
+            </div>
+          </div>
 
-    </div><!-- /.container -->
-
-    <div class="blog-footer">
-
+          <div class="footer pure-g">
+              <div class="footer-list pure-u-1-1">
+                  <a href="http://linkedin.com/in/sanketchauhan" class="pure-menu-link">// Sanket Chauhan</a>
+                  <a href="#" class="pure-menu-link">About</a>
+                  <a href="http://github.com/sanke93/scblog" class="pure-menu-link">Built using Django - Source Code</a>
+              </div>
+          </div>
     </div>
+</div>
+
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
      <!-- <script src="{% static "js/docs.min.js" %}"></script> -->
   </body>
 </html>

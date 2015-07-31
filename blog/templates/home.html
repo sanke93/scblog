@@ -2,17 +2,25 @@
 {% load django_markdown %}
 
 {% block blog_entries %}
+<h1 class="content-subhead">Recent Posts</h1>
 {% for object in object_list %}
-  <div class="post">
-  
-    <h2>
-    <a href="{% url "entry_detail" slug=object.slug %}">{{ object.title }}</a>
-    </h2>
-    <p class="meta">
-      {{ object.created }} |
-      Tagged under {{  object.tags.all|join:", " }}
-    </p>
-    {{ object.body|markdown }}
-  </div>
-{% endfor %}
+  <section class="post">
+    <header class="post-header">
+       
+
+        <h2 class="post-title">
+          <a href="{% url "entry_detail" slug=object.slug %}">{{ object.title }}</a>
+        </h2>
+
+        <p class="post-meta">
+            {{ object.created }} | Tagged under {{  object.tags.all|join:", " }}
+             <!-- Tagged under <a class="post-category post-category-js" href="#">{{  object.tags.all|join:", " }}</a> -->
+        </p>
+
+    </header>
+    <div class="post-description">
+          {{ object.body|markdown }}
+    </div>
+  </section>
+  {% endfor %}
 {% endblock %}
